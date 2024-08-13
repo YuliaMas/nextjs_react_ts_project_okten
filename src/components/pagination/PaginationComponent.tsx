@@ -1,8 +1,7 @@
 'use client';
-import React, {FC} from 'react';
+import React from 'react';
 import {useSearchParams} from "next/navigation";
 import {movieService} from "@/services/api.service";
-import {ReadonlyURLSearchParams} from "next/dist/client/components/navigation.react-server";
 import {
     Pagination,
     PaginationContent,
@@ -36,7 +35,7 @@ const PaginationComponent = async () => {
                 {page > 1 && (
                 <PaginationItem>
                     <PaginationLink href={`/movies?page=${page-1}`} >
-                        {+page-1}
+                        {page-1}
                     </PaginationLink>
                 </PaginationItem>)
                 }
