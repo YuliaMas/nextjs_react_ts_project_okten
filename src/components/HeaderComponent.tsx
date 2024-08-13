@@ -1,25 +1,23 @@
-import Link from "next/link";
 import React from "react";
 import ToggleMode from "./ToggleMode";
-import AvatarComponent from "@/components/AvatarComponent";
 import NavComponent from "@/components/nav/NavComponent";
+import AuthComponent from "@/components/AuthComponent";
+import LogoComponent from "@/components/LogoComponent";
 
 const HeaderComponent = () => {
     return (
-        <nav className="flex fixed w-full flex-col items-center border-b mb-5 py-5 bg-secondary ">
-          <Link  href={'/'}>The Movies Data Base</Link>
+        <nav className="flex w-full flex-col items-center border-b mb-5 py-5 bg-secondary">
             <div className="flex justify-between max-w-6xl w-full">
+               <LogoComponent/>
                 <div className="flex items-center gap-5">
-                    <NavComponent  path={'/'}>Home</NavComponent>
-                    <NavComponent  path={'/movies'}>Movies</NavComponent>
-                    <NavComponent  path={'/genres'}>Genres</NavComponent>
+                    <NavComponent path={'/'}>Home</NavComponent>
+                    <NavComponent path={'/movies'}>Movies</NavComponent>
+                    <NavComponent path={'/genres'}>Genres</NavComponent>
+                    <NavComponent path={'/search'}>Search</NavComponent>
                 </div>
                 <div className="flex items-center gap-5">
-                    <Link href={'/'}>Sign out</Link>
-                    <Link href="/">
-                        <AvatarComponent/>
-                    </Link>
-                    <ToggleMode />
+                    <AuthComponent/>
+                    <ToggleMode/>
                 </div>
             </div>
         </nav>
