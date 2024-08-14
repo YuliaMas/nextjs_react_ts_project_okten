@@ -1,7 +1,6 @@
 'use client';
 import React from 'react';
-import {useSearchParams} from "next/navigation";
-import {movieService} from "@/services/api.service";
+
 import {
     Pagination,
     PaginationContent,
@@ -11,48 +10,45 @@ import {
     PaginationNext,
     PaginationPrevious,
 } from "@/components/ui/pagination";
+import {usePathname} from "next/navigation";
 
-const DEFAULT_PAGE = 1;
 
-const PaginationComponent = async () => {
-    // :FC<IProps> = ({totalItems, itemsPerPage, currentPage, setCurrentPage})
-    let searchParams = useSearchParams();
-    let page= Number(searchParams.get('page')) ?? DEFAULT_PAGE;
-
-    let res = await movieService.getMoviesPages();
-    console.log(res.total_pages);
-
-    // [ 'page', 'results', 'total_pages', 'total_results' ]
-
+const PaginationComponent = ({page, totalPages}) => {
+    let path = usePathname();
+    console.log(path);
     return (
         <Pagination>
             <PaginationContent>
                 {page > 1 && (
                     <PaginationItem>
-                    <PaginationPrevious href={`/movies?page=${page - 1}`} />
+                    <PaginationPrevious href={`${path}?page=${page - 1}`} />
                 </PaginationItem>)
                 }
                 {page > 1 && (
                 <PaginationItem>
-                    <PaginationLink href={`/movies?page=${page-1}`} >
+                    <PaginationLink href={`${path}?page=${page-1}`} >
                         {page-1}
                     </PaginationLink>
                 </PaginationItem>)
                 }
                 <PaginationItem>
-                    <PaginationLink href={`/movies?page=${page}`} isActive>
+                    <PaginationLink href={`${path}?page=${page}`} isActive>
                         {page}
                     </PaginationLink>
                 </PaginationItem>
+                { page < totalPages && (
                 <PaginationItem>
-                    <PaginationLink  href={`/movies?page=${page+1}`}>{page +1}</PaginationLink>
-                </PaginationItem>
+                    <PaginationLink  href={`${path}?page=${page+1}`}>{page +1}</PaginationLink>
+                </PaginationItem>)
+                }
+                { page < totalPages-1 && (
                 <PaginationItem>
                     <PaginationEllipsis />
-                </PaginationItem>
-                { page <= res.total_pages && (
+                </PaginationItem>)
+                }
+                { page < totalPages && (
                     <PaginationItem>
-                        <PaginationNext href={`/movies?page=${page + 1}`} />
+                        <PaginationNext href={`${path}?page=${page + 1}`} />
                     </PaginationItem>)
                 }
             </PaginationContent>
