@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import Image from "next/image";
+import Link from "next/link";
 
 type IProps = {
     movie: IMovie;
@@ -7,14 +8,16 @@ type IProps = {
 const MovieComponent:FC<IProps> = ({movie}) => {
     return (
             <div className={"w-full"}>
-                <Image src={'https://image.tmdb.org/t/p/w200' + movie.poster_path}
-                       alt={movie.title}
-                       width={200}
-                       height={300}
-                       priority
-                />
-                <h2 className={"font-bold text-lg"}>{movie.title}</h2>
-                <h3>{movie.id}</h3>
+                <Link href={`/movies/${movie.id}`} >
+                     <Image src={'https://image.tmdb.org/t/p/w200' + movie.poster_path}
+                            alt={movie.title}
+                            width={200}
+                            height={300}
+                            priority
+                     />
+                     <h2 className={"font-bold text-lg"}>{movie.title}</h2>
+                     <h3>{movie.id}</h3>
+                </Link>
             </div>
     );
 };

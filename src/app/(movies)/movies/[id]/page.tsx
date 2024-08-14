@@ -1,11 +1,19 @@
 import React from 'react';
+import {movieService} from "@/services/api.service";
+import MoviesListCard from "@/components/MoviesListCard";
 
-const MovieInfoPage = () => {
+type Params = {
+    Params : {id: string}
+}
+const MoviesListPage = async ({params}: Params) => {
+    let infoMovie = await movieService.getMovieById(params.id);
+    console.log(infoMovie.id);
     return (
-        <div>
-            Info Movie
+        <div className={"items-center m-5"}>
+            <h1 className={"text-cyan-500 text-center"}>Info Movie</h1>
+            <MoviesListCard infoMovie={infoMovie}/>
         </div>
     );
 };
 
-export default MovieInfoPage;
+export default MoviesListPage;

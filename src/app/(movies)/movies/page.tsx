@@ -1,15 +1,12 @@
-// 'use client';
 'use server';
 import React from 'react';
 import {movieService} from "@/services/api.service";
 import PaginationComponent from "@/components/pagination/PaginationComponent";
 import MovieComponent from "@/components/MovieComponent";
 
-type PropsPageType = {
-    page?: string
-}
+
 type PropsParamsType = {
-    searchParams? : PropsPageType;
+    searchParams? : {page?: string};
 }
 
 const MoviesPage = async({searchParams,}: PropsParamsType)=> {
