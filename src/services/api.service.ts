@@ -6,7 +6,7 @@ const options = {
     headers: {
         accept: 'application/json',
         Authorization: 'Bearer' + ' ' + tokenPair,
-    }
+    },
 };
 
 export const authService = {
@@ -24,17 +24,26 @@ export const genreService = {
             .then(response => response.json())
             .then(response => response)
             .catch(err => console.error(err));
-     console.log(response.genres);
+     // console.log(response.genres);
      return (response.genres);
-    }
-};
-export const movieService = {
-    getMovies: async (pageValue):Promise<IMovie[]> => {
-     let response = await fetch(baseUrl + '/discover/movie?page=' +  pageValue, options)
+    },
+    getMoviesByGenre: async (genreId, page):Promise<IPages>=> {
+        let response =  fetch(`https://api.themoviedb.org/3/discover/movie?page=${page}&sort_by=popularity.desc&with_genres=${genreId}`, options)
             .then(response => response.json())
             .then(response => response)
             .catch(err => console.error(err));
-     console.log(response.results);
+        // console.log(response);
+        return (response);
+    }
+};
+export const movieService = {
+    getMovies: async (page):Promise<IMovie[]> => {
+        console.log(page);
+     let response = await fetch(baseUrl + '/discover/movie?page=' + page, options)
+            .then(response => response.json())
+            .then(response => response)
+            .catch(err => console.error(err));
+     // console.log(response.results);
      return (response.results);
     },
     getMoviesPages: async ():Promise<IPages> => {
@@ -42,7 +51,15 @@ export const movieService = {
                 .then(response => response.json())
                 .then(response => response)
                 .catch(err => console.error(err));
-        console.log(response);
+        // console.log(response);
+        return (response);
+    },
+    getMovieById: async (id):Promise<IMovieById> => {
+        let response = await fetch(baseUrl + '/movie/' + id, options)
+            .then(response => response.json())
+            .then(response => response)
+            .catch(err => console.error(err));
+        // console.log(response);
         return (response);
     }
 }

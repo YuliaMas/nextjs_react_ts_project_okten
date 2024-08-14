@@ -1,19 +1,9 @@
 import React from 'react';
-import {genreService} from "@/services/api.service";
-import GenreComponent from "@/components/GenreComponent";
 
-const GenresPage = async () => {
-    const genres = await genreService.getGenres();
-    console.log(genres);
+const GenresPage = () => {
     return (
-        <div>
-            {
-                genres.map((genre) => (
-                    <GenreComponent key={genre.id} genre={genre}/>
-                    // <li key={genre.id}>{genre.id} {genre.name}</li>
-                ))
-            }
-
+        <div className={"text-cyan-500 text-center font-bold text-lg"}>
+            <h1>Movies Genre</h1>
         </div>
     );
 };
