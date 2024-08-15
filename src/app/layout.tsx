@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import "./globals.css";
 import React from "react";
 import {ThemeProvider} from "@/components/theme-provider";
-import HeaderComponent from "@/components/HeaderComponent";
+import HeaderComponent from "@/components/header/HeaderComponent";
 import {inter} from "@/app/ui/fonts";
 
 export const metadata: Metadata = {
