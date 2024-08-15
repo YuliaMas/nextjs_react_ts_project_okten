@@ -15,8 +15,8 @@ const MoviesPage = async({searchParams,}: PropsParamsType)=> {
     let res = await movieService.getMoviesPages();
     let totalPages = res.total_pages;
     return (
-        <div>
-            <div className={"grid grid-cols-7 justify-around wrap gap-5 m-12"}>
+        <div className={"flex flex-col justify-items-center"}>
+            <div className={"w-full justify-center grid lg:grid-cols-5 lg:justify-around wrap gap-6 md:justify-around md:m-0 lg:w-full  md:grid-cols-2 pt-4 pb-4"}>
                 {
                     response.map(movie => (
                         <MovieComponent  key={movie.id} movie={movie}/>
