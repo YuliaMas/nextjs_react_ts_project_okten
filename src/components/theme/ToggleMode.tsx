@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 const ToggleMode = () => {
     const { theme, setTheme } = useTheme();
@@ -11,7 +11,7 @@ const ToggleMode = () => {
 
     useEffect(() => {
         setMounted(true);
-    });
+    },[theme]);
 
     if (!mounted) {
         return <Button variant="secondary" size="icon" disabled={true}></Button>;
