@@ -25,9 +25,9 @@ export default function RootLayout({children,}: Readonly<Props>) {
           disableTransitionOnChange>
 
           <HeaderComponent/>
-
-          {children}
-
+          <div className={"pt-24"}>
+              {children}
+          </div>
       </ThemeProvider></body>
     </html>
   );
