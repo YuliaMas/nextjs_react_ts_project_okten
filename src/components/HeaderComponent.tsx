@@ -6,8 +6,8 @@ import LogoComponent from "@/components/LogoComponent";
 
 const HeaderComponent = () => {
     return (
-        <nav className="flex w-full flex-col items-center border-b mb-5 py-5 bg-secondary">
-            <div className="flex justify-between max-w-6xl w-full">
+        <nav className="flex w-full flex-col items-center border-b mb-5 py-5 bg-secondary fixed">
+            <div className="flex justify-between max-w-6xl w-full sticky">
                <LogoComponent/>
                 <div className="flex items-center gap-5">
                     <NavComponent path={'/'}>Home</NavComponent>
