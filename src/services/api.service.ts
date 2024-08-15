@@ -62,8 +62,20 @@ export const movieService = {
         // console.log(response);
         return (response);
     }
-}
+};
 
+export const searchService = {
+    getAllMovies: async (page, query): Promise<IPages> => {
+        let response = await fetch('https://api.themoviedb.org/3/search/movie?query='+ query +'&include_adult=false&language=en-US&page='+ page, options)
+            .then(response => response.json())
+            .then(response => response)
+            .catch(err => console.error(err));
+        console.log(response);
+        return (response);
+    }
+};
+
+// https://api.themoviedb.org/3/search/movie?query=like&page=6
 
 // fetch('https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=true&language=en-US&page=1&sort_by=title.asc', options)
 //     .then(response => response.json())
