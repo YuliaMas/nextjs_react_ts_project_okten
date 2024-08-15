@@ -5,7 +5,7 @@ const AvatarComponent = () => {
     return (
         <div>
             <Avatar>
-                <AvatarImage src="3d-cartoon-style-character.jpg" alt={"YM"}/>
+                <AvatarImage src="/3d-cartoon-style-character.jpg" alt={"YM"}/>
                 <AvatarFallback>YM</AvatarFallback>
             </Avatar>
         </div>
