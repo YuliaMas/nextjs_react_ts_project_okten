@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import StarsRating from "@/components/StarsRating";
 
-
 type IProps = {
     movie: IMovie;
 }
@@ -21,15 +20,15 @@ const MovieComponent:FC<IProps> = ({movie}) => {
                                            height={300}
                                            priority/>
                                 </div>
-
-                        ) : ( <div className={"w-full rounded-2xl contain-content border-8 border-b-cyan-900  min-h-80"}>
-                            <Image src="/MovieApp1.jpg"
-                                   className={" max-w-80 max-h-80"}
-                                   alt={movie.title}
-                                   width={300}
-                                   height={300}
-                                   priority/>
-                        </div> )
+                        ) : ( <div className={"contain-content  flex justify-items-center rounded-2xl border-8 border-b-cyan-900  min-h-80 max-w-80 max-h-80"} >
+                                <Image src="/MovieApp1.jpg"
+                                       className={"border-b-cyan-900 border max-w-80 max-h-80 md:w-42 lg:w-64 lg:min-w-36 opacity-50 bg-white "}
+                                       alt={movie.title}
+                                       width={300}
+                                       height={300}
+                                       priority/>
+                             </div>
+                        )
                     }
 
                     <StarsRating  rate={movie.vote_average}/>
@@ -38,5 +37,4 @@ const MovieComponent:FC<IProps> = ({movie}) => {
             </div>
     );
 };
-
 export default MovieComponent;
