@@ -15,5 +15,4 @@ const MoviesListPage = async ({params}: Params) => {
         </div>
     );
 };
-
 export default MoviesListPage;
