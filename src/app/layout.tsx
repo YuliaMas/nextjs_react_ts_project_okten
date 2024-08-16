@@ -23,7 +23,6 @@ export default function RootLayout({children,}: Readonly<Props>) {
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange>
-
           <HeaderComponent/>
           <div className={"pt-24"}>
               {children}

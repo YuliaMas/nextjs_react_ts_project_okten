@@ -14,18 +14,16 @@ const GenreByMoviesPage = async ({params, searchParams}: Params) => {
     let response;
     if(id) {
         response = await genreService.getMoviesByGenre(id, page);
-        console.log(response);
     }
     return (
-        <div>
-           <h2>Movie Genre</h2>
-                <div className={"grid grid-cols-7 justify-around wrap gap-5 m-12"}>
-                    {
-                        response.results.map(movie => (
-                            <MovieComponent key={movie.id} movie={movie}/>
-                        ))
-                    }
-                </div>
+        <div className={"w-full"}>
+            <div className={"pt-20 pb-10 flex flex-wrap justify-evenly lg:min-w-full lg:grid-cols-6 lg:w-full lg:justify-around wrap gap-8 m-12 md:justify-end grid-cols-2 md:m-0 md:w-full  md:grid-cols-2 md:text-right"}>
+                {
+                    response.results.map(movie => (
+                        <MovieComponent key={movie.id} movie={movie}/>
+                    ))
+                }
+            </div>
             <PaginationComponent page={page} totalPages={response.total_pages} />
         </div>
     );
