@@ -30,9 +30,8 @@ const MovieComponent:FC<IProps> = ({movie}) => {
                              </div>
                         )
                     }
-
                     <StarsRating  rate={movie.vote_average}/>
-                     <h2 className={"font-bold text-lg"}>{movie.title}</h2>
+                    <h2 className={"font-bold text-lg"}>{movie.title}</h2>
                 </Link>
             </div>
     );
