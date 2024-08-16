@@ -11,10 +11,9 @@ const StarsRating = ({rate}) => {
                 iconWidth='2em'
                 iconHeight='2em'
                 averageRating={rate}
-                iconHoverEffect='scaling'
+                iconHoverEffect='animated-twinkling'
             />
         )
 };
-
 export default StarsRating;
 
