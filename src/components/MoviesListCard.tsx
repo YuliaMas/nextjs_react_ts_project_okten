@@ -3,6 +3,7 @@ import Image from "next/image";
 import StarsRating from "@/components/StarsRating";
 import Link from "next/link";
 import {Badge} from "@mui/material";
+import VideoComponent from "@/components/VideoComponent";
 
 type IProps = {
     infoMovie: IMovieById;
@@ -21,9 +22,11 @@ const MoviesListCard:FC<IProps> = ({infoMovie}) => {
                         ))}
                     </ul>)}>
                         <Image src={'https://image.tmdb.org/t/p/w500' + infoMovie.poster_path}
-                               alt={infoMovie.title} width={500} height={500}/>
+                               alt={infoMovie.title} width={500} height={500} className={"border-4xl border-amber-200 rounded"}/>
                 </Badge>
+
                 <div className={"w-3/12 "}>
+                    <VideoComponent id={infoMovie.id} classNamr={"priority z-100"}/>
                     <div className={"m-2 font-bold text-cyan-500"}>
                         <h3> Genres: </h3>
 
@@ -35,20 +38,22 @@ const MoviesListCard:FC<IProps> = ({infoMovie}) => {
                         </ul>
 
                     </div>
-                    <p>Overview: <br/> {infoMovie.overview}</p>
-                    <br/>
-                    <h4>Original title: {infoMovie.original_title}</h4>
-                    <h4>Release date: {infoMovie.release_date}</h4>
-                    <h4>Original language: {infoMovie.original_language}</h4>
-                    <h4>Runtime: {infoMovie.runtime}</h4>
-                    <h5>Average: {infoMovie.vote_average.toFixed(2)}</h5>
-                    <h5>Production companies:
-                        {infoMovie.production_companies.map(comp =>
-                         (<span key={comp.id}>{comp.name} </span>))
-                        }
-                    </h5>
-                    <h5>Production imdb_id: {infoMovie.imdb_id}</h5>
-                    <StarsRating  rate={infoMovie.vote_average}/>
+                    <div>
+                        <p>Overview: <br/> {infoMovie.overview}</p>
+                        <br/>
+                        <h4>Original title: {infoMovie.original_title}</h4>
+                        <h4>Release date: {infoMovie.release_date}</h4>
+                        <h4>Original language: {infoMovie.original_language}</h4>
+                        <h4>Runtime: {infoMovie.runtime}</h4>
+                        <h5>Average: {infoMovie.vote_average.toFixed(2)}</h5>
+                        <h5>Production companies:
+                            {infoMovie.production_companies.map(comp =>
+                                (<span key={comp.id}>{comp.name} </span>))
+                            }
+                        </h5>
+                        <h5>Production imdb_id: {infoMovie.imdb_id}</h5>
+                    </div>
+                    <StarsRating rate={infoMovie.vote_average}/>
                 </div>
             </div>
         </div>

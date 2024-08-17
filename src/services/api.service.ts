@@ -70,10 +70,21 @@ export const searchService = {
             .then(response => response.json())
             .then(response => response)
             .catch(err => console.error(err));
-        console.log(response);
+        // console.log(response);
         return (response);
     }
 };
+export const videoService = {
+    getAllTrailers: async(movieId):Promise<void> => {
+        console.log({love: movieId.id});
+        const response = await fetch(baseUrl + `/movie/${movieId.id}/videos?language=en-US`, options)
+            .then(response => response.json())
+            // .then(response => response.results)
+            .catch(err => console.error(err))
+        console.log(response.results);
+        return response.results;
+    }
+}
 
 // https://api.themoviedb.org/3/search/movie?query=like&page=6
 
