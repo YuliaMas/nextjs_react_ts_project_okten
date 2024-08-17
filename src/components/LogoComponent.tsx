@@ -9,7 +9,7 @@ const LogoComponent = () => {
             <Link href={'/'} alt={"YM"}>
                 <Image
                     className="block rounded-3xl m-22 h-12"
-                    src="/MovieApp1.jpg"
+                    src="/LogoDog.png"
                     alt="MovieApp Logo"
                     width={140}
                     height={60}
