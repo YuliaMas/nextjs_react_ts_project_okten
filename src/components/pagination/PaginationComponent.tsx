@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, {FC} from 'react';
 import {
     Pagination,
     PaginationContent,
@@ -11,17 +11,19 @@ import {
 } from "@/components/ui/pagination";
 import {usePathname, useSearchParams} from "next/navigation";
 
+type Props = {
+    page: number,
+    totalPages: number
+}
 
-const PaginationComponent = ({page, totalPages}) => {
+const PaginationComponent:FC<Props> = ({page, totalPages}) => {
     let path = usePathname();
-    totalPages>500 ? totalPages = 500: totalPages;
-    console.log(`path ${path}`);
+    totalPages > 500 ? totalPages = 500 : totalPages;
     const searchParams = useSearchParams();
     const createPageURL = (pageNumber: number | string) => {
-        const params = new URLSearchParams(searchParams);
-        params.set('page', pageNumber.toString());
-        console.log(`${path}?${params.toString()}`);
-        return `${path}?${params.toString()}`;
+        const newUrl = new URLSearchParams(searchParams);
+        newUrl.set('page', pageNumber.toString());
+        return `${path}?${newUrl.toString()}`;
     };
     return (
         <Pagination>
