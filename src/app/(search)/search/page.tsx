@@ -17,7 +17,6 @@ const SearchPage = async ({searchParams}: Params) => {
     return (
         <div className={"flex flex-col justify-items-center"}>
             <Suspense key={query + page}>
-                {/*<div className={"grid grid-cols-5 justify-around wrap gap-5 m-12"}>*/}
                 <div className={"w-full justify-center grid lg:grid-cols-5 lg:justify-around wrap gap-6 md:justify-around  lg:w-full  md:grid-cols-2 pt-4 pb-4"}>
                     {
                         response.results.map(movie => (
@@ -26,9 +25,7 @@ const SearchPage = async ({searchParams}: Params) => {
                     }
                 </div>
             </Suspense>
-            {query.length > 0 && response.total_pages > 0 &&
-                (<PaginationComponent page={page} totalPages={response.total_pages}/>)
-            }
+            {query.length > 0 && response.total_pages > 0 && (<PaginationComponent page={page} totalPages={response.total_pages}/>)}
         </div>
     );
 };
