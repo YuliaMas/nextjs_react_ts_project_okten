@@ -15,8 +15,9 @@ type Props = {
 }
 
 export default function RootLayout({children,}: Readonly<Props>) {
+    const isDev = process.env.NODE_ENV === 'development'
   return (
-    <html lang="en">
+    <html lang="en"  suppressHydrationWarning={isDev}>
       <body className={`${inter.className} antialiased`}>
       <ThemeProvider
           attribute="class"
