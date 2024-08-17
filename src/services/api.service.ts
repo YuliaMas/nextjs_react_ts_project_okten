@@ -24,7 +24,6 @@ export const genreService = {
             .then(response => response.json())
             .then(response => response)
             .catch(err => console.error(err));
-     // console.log(response.genres);
      return (response.genres);
     },
     getMoviesByGenre: async (genreId, page):Promise<IPages>=> {
@@ -32,18 +31,15 @@ export const genreService = {
             .then(response => response.json())
             .then(response => response)
             .catch(err => console.error(err));
-        // console.log(response);
         return (response);
     }
 };
 export const movieService = {
     getMovies: async (page):Promise<IMovie[]> => {
-        console.log(page);
      let response = await fetch(baseUrl + '/discover/movie?page=' + page, options)
             .then(response => response.json())
             .then(response => response)
             .catch(err => console.error(err));
-     // console.log(response.results);
      return (response.results);
     },
     getMoviesPages: async ():Promise<IPages> => {
@@ -51,7 +47,6 @@ export const movieService = {
                 .then(response => response.json())
                 .then(response => response)
                 .catch(err => console.error(err));
-        // console.log(response);
         return (response);
     },
     getMovieById: async (id):Promise<IMovieById> => {
@@ -59,7 +54,6 @@ export const movieService = {
             .then(response => response.json())
             .then(response => response)
             .catch(err => console.error(err));
-        // console.log(response);
         return (response);
     }
 };
@@ -70,7 +64,6 @@ export const searchService = {
             .then(response => response.json())
             .then(response => response)
             .catch(err => console.error(err));
-        // console.log(response);
         return (response);
     }
 };
@@ -81,15 +74,6 @@ export const videoService = {
             .then(response => response.json())
             // .then(response => response.results)
             .catch(err => console.error(err))
-        console.log(response.results);
         return response.results;
     }
 }
-
-// https://api.themoviedb.org/3/search/movie?query=like&page=6
-
-// fetch('https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=true&language=en-US&page=1&sort_by=title.asc', options)
-//     .then(response => response.json())
-//     .then(response => console.log(response))
-//     .catch(err => console.error(err));
-// https://api.themoviedb.org/3/movie/movie_id/videos?language=en-US'
