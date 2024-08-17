@@ -34,6 +34,7 @@ export const genreService = {
         return (response);
     }
 };
+
 export const movieService = {
     getMovies: async (page):Promise<IMovie[]> => {
      let response = await fetch(baseUrl + '/discover/movie?page=' + page, options)
@@ -67,11 +68,11 @@ export const searchService = {
         return (response);
     }
 };
+
 export const videoService = {
     getAllTrailers: async(id):Promise<IVideo[]> => {
         const response = await fetch(baseUrl + `/movie/${id}/videos?language=en-US`, options)
             .then(response => response.json())
-            // .then(response => response.results)
             .catch(err => console.error(err))
         return response.results;
     }
