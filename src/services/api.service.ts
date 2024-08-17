@@ -75,9 +75,9 @@ export const searchService = {
     }
 };
 export const videoService = {
-    getAllTrailers: async(movieId):Promise<void> => {
-        console.log({love: movieId.id});
-        const response = await fetch(baseUrl + `/movie/${movieId.id}/videos?language=en-US`, options)
+    getAllTrailers: async(id):Promise<IVideo[]> => {
+        console.log({love: id});
+        const response = await fetch(baseUrl + `/movie/${id}/videos?language=en-US`, options)
             .then(response => response.json())
             // .then(response => response.results)
             .catch(err => console.error(err))
