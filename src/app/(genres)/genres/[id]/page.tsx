@@ -8,8 +8,7 @@ type Params = {
   searchParams: {page: string}
 }
 const GenreByMoviesPage = async ({params, searchParams}: Params) => {
-    console.log(`id: ${params.id} `);
-    let id = params.id;
+    const id = params.id;
     const page = Number(searchParams?.page) || 1;
     let response;
     if(id) {
