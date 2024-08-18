@@ -1,8 +1,11 @@
 'use client';
-import React from 'react';
+import React, {FC} from 'react';
 import { RatingStar } from 'react-ts-rating-star';
 
-const StarsRating = ({rate}) => {
+type Props = {
+    rate: number;
+}
+const StarsRating:FC<Props> = ({rate}) => {
     rate = rate / 2 ;
         return (
             <RatingStar
