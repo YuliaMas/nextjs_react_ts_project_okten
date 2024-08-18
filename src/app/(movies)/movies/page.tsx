@@ -4,11 +4,9 @@ import {movieService} from "@/services/api.service";
 import PaginationComponent from "@/components/pagination/PaginationComponent";
 import MovieComponent from "@/components/MovieComponent";
 
-
 type PropsParamsType = {
     searchParams? : {page?: string};
 }
-
 const MoviesPage = async({searchParams,}: PropsParamsType)=> {
     const page = Number(searchParams?.page) || 1;
     let response = await movieService.getMovies(page|| 1);
@@ -29,5 +27,4 @@ const MoviesPage = async({searchParams,}: PropsParamsType)=> {
         </div>
     );
 };
-
 export default MoviesPage;
