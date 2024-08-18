@@ -1,8 +1,16 @@
 import React from "react";
 import {genreService} from "@/services/api.service";
 import GenreComponent from "@/components/GenreComponent";
+import {Metadata} from "next";
 
-export default async function Layout({ children }: { children: React.ReactNode}) {
+export const metadata: Metadata = {
+    title: 'GenresLayout metadata'
+};
+
+type Props = {
+    children: React.ReactNode;
+}
+export default async function GenresLayout({ children }: Props) {
     const genres = await genreService.getGenres();
     return (
         <div className="flex min-h-screen  flex-col md:flex-row items-center md:items-start">
