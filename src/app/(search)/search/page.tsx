@@ -15,7 +15,7 @@ const SearchPage = async ({searchParams}: Params) => {
     const query = searchParams?.query || '';
     const response= await searchService.getAllMovies(page, query);
     return (
-        <div className={"flex flex-col justify-items-center"}>
+        <div className={"flex flex-col justify-center items-center justify-items-center "}>
             <Suspense key={query + page}>
                 <div className={"w-full justify-center grid lg:grid-cols-5 lg:justify-around wrap gap-6 md:justify-around  lg:w-full  md:grid-cols-2 pt-4 pb-4"}>
                     {
