@@ -26,7 +26,7 @@ const MoviesListCard:FC<IProps> = ({infoMovie}) => {
                                height="0"
                                sizes="100vw"
                                className={"w-auto h-auto border-4xl border-amber-200 rounded"}
-                               priority={true}/>
+                               priority={false}/>
                 </Badge>
                 <div className={"w-full md:w-4/12"}>
                     <div className={"m-2 font-bold text-cyan-500"}>

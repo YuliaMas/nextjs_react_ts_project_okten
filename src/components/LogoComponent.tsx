@@ -13,7 +13,7 @@ const LogoComponent = () => {
                     alt="MovieApp Logo"
                     width={140}
                     height={60}
-                    priority={true}
+                    priority={false}
                 />
             </Link>
             <h2 className={"font-bold w-full text-start size-2 text-sky-800 h-6"}> APP </h2>
