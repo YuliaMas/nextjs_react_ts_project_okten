@@ -17,7 +17,7 @@ const MovieComponent:FC<IProps> = ({movie}) => {
                                            className={"transition-transform hover:cursor-pointer hover:scale-110 rounded-2xl border-b-cyan-900 border-8 max-w-80 max-h-80 md:w-42 lg:w-64 w-64 lg:min-w-24"}
                                            alt={movie.title}
                                            width={300}
-                                           height={300}
+                                           height={400}
                                            priority={false}
                                            />
                                 </div>
@@ -26,7 +26,7 @@ const MovieComponent:FC<IProps> = ({movie}) => {
                                            className={"border-b-cyan-900 border max-w-80 max-h-80 md:w-42 w-64 lg:w-58 lg:min-w-24 opacity-70 bg-amber-200"}
                                            alt={movie.title}
                                            width={300}
-                                           height={300}
+                                           height={400}
                                            priority={false}
                                           />
                              </div>
