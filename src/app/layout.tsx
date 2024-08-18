@@ -4,6 +4,7 @@ import React from "react";
 import {ThemeProvider} from "@/components/theme-provider";
 import HeaderComponent from "@/components/header/HeaderComponent";
 import {inter} from "@/app/ui/fonts";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Movies App",
@@ -18,16 +19,17 @@ export default function RootLayout({children,}: Readonly<Props>) {
     const isDev = process.env.NODE_ENV === 'development'
   return (
     <html lang="en"  suppressHydrationWarning={isDev}>
-      <body className={`${inter.className} antialiased`}>
+    <body className={`${inter.className} antialiased`}>
       <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange>
           <HeaderComponent/>
-          <div className={"pt-24"}>
+          <main className={"pt-32 md:pt-28"}>
               {children}
-          </div>
+          </main>
+          <Footer/>
       </ThemeProvider></body>
     </html>
   );
