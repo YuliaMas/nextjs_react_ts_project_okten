@@ -6,7 +6,7 @@ export default function Home() {
   return (
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
           <div className={"w-full mx-auto content-center flex flex-col items-center"}>
-            <h1 className={"text-6xl text-sky-600"}>MOViES APP</h1>
+            <h1 className={"text-6xl text-sky-600 text-center"}>MOViES APP</h1>
           </div>
 
           <div
@@ -17,6 +17,7 @@ export default function Home() {
                 alt="MovieApp Logo"
                 width={300}
                 height={300}
+                priority={false}
             />
           </div>
 
@@ -24,8 +25,7 @@ export default function Home() {
             <Link href="/"
                 className="grouphttps rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
                 target="_self"
-                rel="noopener noreferrer"
-            >
+                rel="noopener noreferrer">
               <h2 className="mb-3 text-2xl font-semibold">
                 Home{" "}
                   <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
@@ -40,8 +40,7 @@ export default function Home() {
             <Link href={"/movies"}
                 className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
                 target="_self"
-                rel="noopener noreferrer"
-            >
+                rel="noopener noreferrer">
               <h2 className="mb-3 text-2xl font-semibold">
                 Movies{" "}
                   <span
@@ -57,8 +56,7 @@ export default function Home() {
             <Link href={"/genres"}
                 className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
                 target="_self"
-                rel="noopener noreferrer"
-            >
+                rel="noopener noreferrer">
               <h2 className="mb-3 text-2xl font-semibold">
                 Genres{" "}
                 <span
@@ -73,9 +71,8 @@ export default function Home() {
 
             <Link href={"/search"}
                 className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
+                target="_self"
+                rel="noopener noreferrer">
               <h2 className="mb-3 text-2xl font-semibold">
                 Search{" "}
                 <span
