@@ -1,3 +1,5 @@
+@import '~react-ts-rating-star/dist/esm/components/styles/react-ts-rating-star.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -110,7 +112,7 @@ body {
      }
 
      /* responsive iframe with a 16:9 aspect ratio
-         thanks https://css-tricks.com/responsive-iframes/
+          https://css-tricks.com/responsive-iframes/
      */
 
      .yt-lite::after {

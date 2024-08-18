@@ -8,7 +8,7 @@ const HeaderComponent = () => {
     return (
         <nav className="flex w-full flex-col items-center border-b mb-5 py-5 bg-secondary fixed z-50">
             <div className="flex flex-wrap-reverse gap-6 justify-center md:justify-between max-w-6xl w-full sticky">
-               <LogoComponent/>
+                <LogoComponent/>
                 <div className="flex items-center gap-5">
                     <NavComponent path={'/'}>Home</NavComponent>
                     <NavComponent path={'/movies'}>Movies</NavComponent>
