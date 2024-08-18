@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const LogoComponent = () => {
     return (
-        <div className={"flex items-center gap-2"}>
+        <div className={"md:flex items-center gap-2 hidden md:visible"}>
             <h2 className={"font-bold w-full text-end  text-sky-800 h-6"}> MOVIES </h2>
             <Link href={'/'} alt={"YM"}>
                 <Image
@@ -20,5 +20,4 @@ const LogoComponent = () => {
         </div>
     );
 };
-
 export default LogoComponent;
