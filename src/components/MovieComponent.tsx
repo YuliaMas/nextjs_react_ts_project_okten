@@ -18,15 +18,15 @@ const MovieComponent:FC<IProps> = ({movie}) => {
                                            alt={movie.title}
                                            width={300}
                                            height={300}
-                                           priority/>
+                                           />
                                 </div>
                         ) : ( <div className={"contain-content  flex justify-items-center rounded-2xl border-8 border-b-cyan-900  lg:w-64 min-h-80 max-w-80 max-h-80"} >
-                                <Image src="/LogoDog.png"
-                                       className={"border-b-cyan-900 border max-w-80 max-h-80 md:w-42 w-64 lg:w-58 lg:min-w-24 opacity-70 bg-amber-200"}
-                                       alt={movie.title}
-                                       width={300}
-                                       height={300}
-                                       priority/>
+                                    <Image src="/LogoDog.png"
+                                           className={"border-b-cyan-900 border max-w-80 max-h-80 md:w-42 w-64 lg:w-58 lg:min-w-24 opacity-70 bg-amber-200"}
+                                           alt={movie.title}
+                                           width={300}
+                                           height={300}
+                                          />
                              </div>
                         )
                     }
