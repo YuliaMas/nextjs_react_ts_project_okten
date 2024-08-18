@@ -18,6 +18,7 @@ const MovieComponent:FC<IProps> = ({movie}) => {
                                            alt={movie.title}
                                            width={300}
                                            height={300}
+                                           priority={true}
                                            />
                                 </div>
                         ) : ( <div className={"contain-content  flex justify-items-center rounded-2xl border-8 border-b-cyan-900  lg:w-64 min-h-80 max-w-80 max-h-80"} >
@@ -26,6 +27,7 @@ const MovieComponent:FC<IProps> = ({movie}) => {
                                            alt={movie.title}
                                            width={300}
                                            height={300}
+                                           priority={false}
                                           />
                              </div>
                         )
