@@ -4,7 +4,7 @@ import React from "react";
 import {ThemeProvider} from "@/components/theme-provider";
 import HeaderComponent from "@/components/header/HeaderComponent";
 import {inter} from "@/app/ui/fonts";
-import Footer from "@/components/Footer";
+import FooterComponent from "@/components/FooterComponent";
 
 export const metadata: Metadata = {
   title: "Movies App",
@@ -29,7 +29,7 @@ export default function RootLayout({children,}: Readonly<Props>) {
           <main className={"pt-32 md:pt-28"}>
               {children}
           </main>
-          <Footer/>
+          <FooterComponent/>
       </ThemeProvider></body>
     </html>
   );
